@@ -1,0 +1,14 @@
+app.post('/api/book',async (req, res) => {
+const booking = await Booking.create(req.body);
+
+// Simulated PayFast redirect URL (you'll replace with real PayFast integration)
+const redirectUrl = `http://localhost:3000/success`;
+res.json({ success: true, redirectUrl });
+});
+
+app.listen(5000, () => console.log('Server running on port 5000'));
+
+// ------------------------------------------
+// .env (in /server folder)
+// ------------------------------------------
+MONGO_URI=mongodb+srv://citilink_user:JVI1SKurwydkQB8E@cluster1.4mni3jy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1
